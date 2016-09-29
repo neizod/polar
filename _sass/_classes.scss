@@ -4,6 +4,15 @@
 }
 
 
+.cite {
+    text-align: right;
+    font-style: italic;
+}
+.cite::before {
+    content: "— ";
+}
+
+
 .spoiler {
     background: $minor-color;
     color: $minor-color;
@@ -11,6 +20,25 @@
 .spoiler::before {
     content: "spoiler alert!";
     color: $font-color;
+}
+
+
+.oversized {
+    @extend .flex;
+    @extend .flex.column;
+    padding: 0;
+    border: none;
+    overflow-x: auto;
+    width: calc(100vw - 2em);
+    margin-left: calc(1em - ((100vw - 100%) / 2));
+    @include mobile {
+        width: 100vw;
+        margin-left: calc(-1 * ((100vw - 100%) / 2));
+    }
+}
+.oversized > * {
+    margin: auto;
+    padding: 0;
 }
 
 
