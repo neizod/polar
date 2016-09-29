@@ -26,6 +26,7 @@ facebook:
 
 twitter:
   username:                             #TODO site's twitter
+  widgets:           true               #TODO embed twitter card
   share_large_image: true               #TODO use large img in twitter card
 
 disqus:
