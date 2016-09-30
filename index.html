@@ -1,16 +1,8 @@
 ---
 article: false
-feature:
-  posts:
-    latest: true
-    list:
-      - "/2016/03/19/markdown-examples"
-  projects:
-    list:
-      - "/projects/polar"
 ---
 
 <div class="posts">
-  {% include list/posts.html feature=page.feature.posts %}
-  {% include list/projects.html feature=page.feature.projects %}
+  {% include list/posts.html feature=site.data.feature.posts %}
+  {% include list/projects.html feature=site.data.feature.projects %}
 </div>
