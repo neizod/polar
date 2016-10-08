@@ -53,10 +53,11 @@ __Lorem ipsum__ dolor sit amet, consectetur _adipiscing elit_. Proin blandit ero
 Quotes
 ------
 
+{: .quotation}
 > Nulla sit amet consectetur augue. Quisque sed dolor purus.
 > Nulla magna est elit. Quisque gravida.
 >
-> -- Ignotus Philosophus
+> Ignotus Philosophus
 
 
 List
@@ -196,6 +197,8 @@ window.onload = function() {
   }
 }
 ```
+
+Keep in mind that line numbering will not work on client machine that disable JavaScript.
 
 
 Math
