@@ -3,7 +3,13 @@
 
 @charset "utf-8";
 
+
 $palette: "{{ site.data.theme.color.palette }}";
+
+$font-head: {% for font in site.data.theme.fonts.sans %}{{ font.family | prepend: '"' | append: '"' }}, {% endfor %}sans-serif;
+$font-body: {% for font in site.data.theme.fonts.serif %}{{ font.family | prepend: '"' | append: '"' }}, {% endfor %}serif;
+$font-mono: {% for font in site.data.theme.fonts.mono %}{{ font.family | prepend: '"' | append: '"' }}, {% endfor %}monospace;
+
 
 @import "variables";
 @import "normalize";

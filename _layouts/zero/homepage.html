@@ -1,0 +1,25 @@
+---
+layout: default
+article: false
+---
+
+<div class="container">
+  {% if site.posts.size == 0 %}
+    {% include zero/homepage.md %}
+    <article class="page">
+      <div class="flex align-center mobile-column">
+        <div class="flexitem fill">
+          <h1>{{ zero-title }}</h1>
+        </div>
+      </div>
+      <div class="entry">
+        {{ zero-content | markdownify }}
+      </div>
+    </article>
+  {% else %}
+    <div class="posts">
+      {% include list/posts.html feature=site.data.feature.posts %}
+      {% include list/projects.html feature=site.data.feature.projects %}
+    </div>
+  {% endif %}
+</div>

@@ -1,0 +1,26 @@
+---
+layout: default
+article: false
+---
+
+<div class="container">
+  {% if site.projects.size == 0 %}
+    {% include zero/projects.md %}
+    <article class="page">
+      <div class="flex align-center mobile-column">
+        <div class="flexitem fill">
+          <h1>{{ zero-title }}</h1>
+        </div>
+      </div>
+      <div class="entry">
+        {{ zero-content | markdownify }}
+      </div>
+    </article>
+    {% include paginate/base.html %}
+  {% else %}
+    <div class="posts">
+      {% include list/projects.html %}
+    </div>
+    {% include paginate/multiple.html %}
+  {% endif %}
+</div>

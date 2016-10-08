@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="excerpt entry">
-        {{ project.excerpt | strip_html }}
+        {{ project.excerpt }}
         <a href="{{ project.url | prepend: site.baseurl }}">{{ site.data.theme.text.excerpt.read_more }}</a>
         {% if project.demo %}
           / <a href="{{ project.demo }}">{{ site.data.theme.text.project.demo }}</a>

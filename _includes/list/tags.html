@@ -11,6 +11,5 @@
   {% unless include.tags %}
     {% assign tag_title = tag_title | first %}
   {% endunless %}
-  {% capture id %}{{ prepath }}{% include utils/id.html string=tag_title %}{% endcapture %}
-  <a href="{{ id | strip }}">{{ tag_title }}{% if tag_size > 0 %} ({{ tag_size }}){% endif %}</a>{% unless forloop.last %},{% endunless %}
+  <a href="{{ tag_title | slugify | prepend: prepath }}">{{ tag_title }}{% if tag_size > 0 %} ({{ tag_size }}){% endif %}</a>{% unless forloop.last %},{% endunless %}
 {% endfor %}

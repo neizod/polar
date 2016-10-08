@@ -1,15 +1,34 @@
 .infobox {
+    margin: 0;
+    padding: 0 1.5em;
     background: $major-color;
     border: 1px solid $border-color;
 }
 
 
-.cite {
+.quote {
+    margin: 0;
+    padding: 0 1.5em;
+    border-left: 0.25em solid $major-color;
+}
+.quote > p:last-child {
     text-align: right;
     font-style: italic;
 }
-.cite::before {
+.quote > p:last-child::before {
     content: "— ";
+}
+
+
+.figure {
+    padding: 0;
+    margin: auto;
+    border: none;
+}
+.figure > p {
+    color: rgba($font-color, 0.7);
+    text-align: center;
+    font-style: italic;
 }
 
 

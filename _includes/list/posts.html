@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="excerpt entry">
-        {{ post.excerpt | strip_html }}
+        {{ post.excerpt }}
         <a href="{{ post.url | prepend: site.baseurl }}">{{ site.data.theme.text.excerpt.read_more }}</a>
       </div>
     </article>

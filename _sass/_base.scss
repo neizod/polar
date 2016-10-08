@@ -86,13 +86,6 @@ td {
 }
 
 
-blockquote {
-    margin: 0;
-    padding: 0 1.5em;
-    border-left: 0.25em solid $major-color;
-}
-
-
 code {
     @extend .highlight;
     font-family: $font-mono;
