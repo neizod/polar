@@ -4,22 +4,22 @@ article: false
 ---
 
 <div class="container">
-  {% if site.posts.size == 0 %}
-    {% include zero/posts.md %}
+  {% if site.projects.size == 0 %}
+    {% include empty/projects.md %}
     <article class="page">
       <div class="flex align-center mobile-column">
         <div class="flexitem fill">
-          <h1>{{ zero-title }}</h1>
+          <h1>{{ empty-title }}</h1>
         </div>
       </div>
       <div class="entry">
-        {{ zero-content | markdownify }}
+        {{ empty-content | markdownify }}
       </div>
     </article>
     {% include paginate/base.html %}
   {% else %}
     <div class="posts">
-      {% include list/posts.html %}
+      {% include list/projects.html %}
     </div>
     {% include paginate/multiple.html %}
   {% endif %}

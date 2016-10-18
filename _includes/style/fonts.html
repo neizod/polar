@@ -1,27 +1,31 @@
-{% capture families %}
-{% for type in site.data.theme.fonts %}
-  {% if type[0] == 'subset' %}
-    {% continue %}
-  {% endif %}
-  {% for font in type[1] %}
-    | {{ font.family | replace: ' ', '+' }}
-    {% if font.weight %}
-      : {{ font.weight }}
-    {% endif %}
+{% capture NOOUT %}
+  {% assign specs = site.empty_array %}
+  {% assign faces = site.empty_array %}
+  {% assign types = "head,body,mono" | split: "," %}
+  {% for type in types %}
+      {% for family in site.data.theme.font[type].families %}
+        {% capture spec %}
+          {{ family.name | replace: " ", "+" }}
+          {% if family.weight %}
+            : {{ family.weight }}
+          {% endif %}
+        {% endcapture %}
+        {% assign faces = faces | push: spec %}
+      {% endfor %}
   {% endfor %}
-{% endfor %}
-{% endcapture %}
-{% assign families = families | remove_first: "|" | normalize_whitespace | replace: " ", "" %}
-
-{% capture subsets %}
-  {% if site.data.theme.fonts.subset %}
-    {% for subset in site.data.theme.fonts.subset %}
-      , {{ subset }}
-    {% endfor %}
+  {% assign faces = faces | join: "|" | prepend: "family=" %}
+  {% assign specs = specs | push: faces %}
+  {% assign langs = site.empty_array %}
+  {% for lang in site.data.theme.font.languages %}
+    {% assign langs = langs | push: lang %}
+  {% endfor %}
+  {% if langs %}
+    {% assign langs = langs | join: "," | prepend: "subset=" %}
+    {% assign specs = specs | push: langs %}
   {% endif %}
+  {% assign specs = specs | join: "&" | normalize_whitespace | remove: " " %}
 {% endcapture %}
-{% assign subsets = subsets | remove_first: "," | normalize_whitespace | replace: " ", "" %}
 
 <style>
-  @import url("//fonts.googleapis.com/css?family={{ families }}{% if subsets %}&subset={{ subsets }}{% endif %}");
+  @import url("//fonts.googleapis.com/css?{{ specs }}");
 </style>

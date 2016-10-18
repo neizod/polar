@@ -1,3 +1,3 @@
 ---
-layout: zero/homepage
+layout: empty/homepage
 ---

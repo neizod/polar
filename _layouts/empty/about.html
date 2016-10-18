@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+{% capture NOOUT %}
+  {% assign content_size = content | normalize_whitespace | size %}
+  {% if content_size == 0 %}
+    {% include empty/about.md %}
+    {% assign the_title = empty-title %}
+    {% assign the_content = empty-content | markdownify %}
+  {% else %}
+    {% assign the_title = page.title %}
+    {% assign the_content = content %}
+  {% endif %}
+{% endcapture %}
+
+<div class="container">
+  <article class="page">
+    <div class="flex align-center mobile-column">
+      <div class="flexitem fill">
+        <h1>{{ the_title }}</h1>
+      </div>
+    </div>
+    <div class="entry">
+      {{ the_content }}
+    </div>
+  </article>
+</div>

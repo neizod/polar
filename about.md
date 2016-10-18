@@ -1,4 +1,5 @@
 ---
+layout: empty/about
 title: About Me
 ---
 

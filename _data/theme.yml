@@ -44,11 +44,21 @@ text:
 
 
 #TODO you may change/add more font here.
-fonts:
-  sans:
-    - family: Raleway
-      weight: 300
-  serif:
-    - family: Lora
+font:
+  head:
+    families:
+      - name: Raleway
+        weight: 300
+    default: sans-serif
+  body:
+    families:
+      - name: Lora
+    default: serif
   mono:
-    - family: Ubuntu Mono
+    families:
+      - name: Ubuntu Mono
+    default: monospace
+    size: 1.0em
+    line-height: 1.2
+  languages:
+    - latin-ext
