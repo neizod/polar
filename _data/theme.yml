@@ -15,16 +15,28 @@ date:
 
 #TODO you may change navigation behavior here.
 navigation:
-  older_left: false
+  menu:
+    - name: Posts
+      path: "/posts"
+    - name: Projects
+      path: "/projects"
+    - name: About
+      path: "/about"
+  paginate:
+    older: right
 
 
 #TODO you may customize padding text here.
 text:
   meta:
     title_sep:    "|"
+  menu:
+    item_sep:     "⋅"
   date:
     post:         Written on
     proj:         Worked on
+  empty:
+    announcement: Announcement
   excerpt:
     read_more:    Read More
   mark:

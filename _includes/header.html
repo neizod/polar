@@ -10,11 +10,12 @@
       <h2>{{ site.description }}</h2>
     </div>
     <nav>
-      <a href="{{ site.baseurl }}/posts">Posts</a> &sdot;
-      {% if site.projects.size != 0 %}
-        <a href="{{ site.baseurl }}/projects">Projects</a> &sdot;
-      {% endif %}
-      <a href="{{ site.baseurl }}/about.html">About</a>
+      {% for it in site.data.theme.navigation.menu %}
+        <a href="{{ it.path | prepend: site.baseurl }}">{{ it.name }}</a>
+        {% unless forloop.last %}
+          {{ site.data.theme.text.menu.item_sep }}
+        {% endunless %}
+      {% endfor %}
     </nav>
   </header>
 </div>

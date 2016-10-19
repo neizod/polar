@@ -1,0 +1,13 @@
+{% capture NOOUT %}
+  {% assign homepage-empty = true %}
+  {% for collection in site.collections %}
+    {% if collection.docs.size != 0 %}
+      {% assign homepage-empty = false %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% assign striped_content = content | normalize_whitespace %}
+  {% if striped_content.size != 0 %}
+    {% assign homepage-announcement = true %}
+  {% endif %}
+{% endcapture %}

@@ -1,4 +1,4 @@
-{% if site.data.theme.navigation.older_left %}
+{% if site.data.theme.navigation.paginate.older == 'left' %}
   {% assign left_path = page.previous.url %}
   {% assign left_text = page.previous.title %}
   {% assign right_path = page.next.url %}
