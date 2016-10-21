@@ -1,0 +1,14 @@
+{% if include.demo or include.source %}
+  <div class="info flex mobile-column">
+    {% if include.demo %}
+      <div class="demo flexitem fill">
+        <a href="{{ include.demo }}">{{ site.data.theme.text.project.demo }}</a>
+      </div>
+    {% endif %}
+    {% if include.source %}
+      <div class="source flexitem fill">
+        <a href="{{ include.source }}">{{ site.data.theme.text.project.source }}</a>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

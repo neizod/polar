@@ -1,23 +1,4 @@
 ---
-article: false
+layout: empty/tags
 title: Tags
 ---
-
-<div class="posts">
-  {% for tag in site.tags %}
-    <div class="target" id="{{ tag | first | slugify }}">
-      <h2>{{ tag[0] }}</h2>
-      <ul>
-      {% for post in tag[1] %}
-        <li>
-          <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </li>
-      {% endfor %}
-      </ul>
-    </div>
-  {% endfor %}
-  <div>
-    <h2>Tags</h2>
-    {% include list/tags.html %}
-  </div>
-</div>

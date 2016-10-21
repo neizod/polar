@@ -2,36 +2,8 @@
 layout: default
 ---
 
-<div class="container">
-  <article class="project">
-    <div class="flex align-center mobile-column">
-      <div class="flexitem fill">
-        <h1>{{ page.title }}</h1>
-      </div>
-    </div>
-    <div class="info flex mobile-column">
-      {% if page.demo %}
-        <div class="demo flexitem fill">
-          <a href="{{ page.demo }}">{{ site.data.theme.text.project.demo }}</a>
-        </div>
-      {% endif %}
-      {% if page.source %}
-        <div class="source flexitem fill">
-          <a href="{{ page.source }}">{{ site.data.theme.text.project.source }}</a>
-        </div>
-      {% endif %}
-    </div>
-    <div class="entry">
-      {{ content }}
-    </div>
-    {% if page.display_date %}
-      <div class="date">
-        {{ site.data.theme.text.date.proj }} {{ page.display_date }}
-      </div>
-    {% endif %}
-    {% include paginate/single.html %}
-    <div class="comment">
-      {% include script/disqus.html %}
-    </div>
-  </article>
-</div>
+{% include article.html class='project'
+           title=page.title content=content
+           demo=page.demo source=page.source
+           display_date=page.display_date
+           paginate='single' comment=true %}

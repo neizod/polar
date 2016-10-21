@@ -1,0 +1,17 @@
+{% if include.feature %}
+  {% assign quota = include.feature.latest | default: 1 %}
+{% else %}
+  {% assign quota = -1 %}
+{% endif %}
+{% for project in site.projects reversed %}
+  {% if quota != 0 or include.feature.list contains project.id %}
+    {% include article.html class='post'
+               title=project.title content=project.excerpt
+               demo=project.demo source=project.source
+               display_date=project.display_date
+               url=project.url quota=quota %}
+    {% if quota > 0 %}
+      {% assign quota = quota | minus: 1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}

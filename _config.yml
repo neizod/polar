@@ -58,7 +58,6 @@ defaults:
       type: pages
     values:
       layout: page
-      article: true
   - scope:
       path: ""
       type: posts

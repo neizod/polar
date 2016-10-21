@@ -1,0 +1,45 @@
+{% if include.content %}
+  <article class="{% if include.url %}excerpt {% endif %}{{ include.class }}">
+    {% include article/title.html title=include.title
+               url=include.url quota=include.quota
+               date=include.date display_date=include.display_date %}
+    {% unless include.url %}
+      {% include article/project_demo.html demo=include.demo source=include.source %}
+    {% endunless %}
+    <div class="{% if include.url %}excerpt {% endif %}entry">
+      {{ include.content }}
+      {% if include.url %}
+        <a href="{{ include.url | prepend: site.baseurl }}">{{ site.data.theme.text.excerpt.read_more }}</a>
+        {% if include.demo %}
+          / <a href="{{ include.demo }}">{{ site.data.theme.text.project.demo }}</a>
+        {% endif %}
+        {% if include.source %}
+          / <a href="{{ include.source }}">{{ site.data.theme.text.project.source }}</a>
+        {% endif %}
+      {% endif %}
+    </div>
+    {% if include.date %}{% unless include.url %}
+      <div class="date">
+        {{ site.data.theme.text.date.post }} {% include date/display.html date=include.date type='long' %}
+      </div>
+    {% endunless %}{% endif %}
+    {% if include.display_date %}{% unless include.url %}
+      <div class="date">
+        {{ site.data.theme.text.date.proj }} {{ include.display_date }}
+      </div>
+    {% endunless %}{% endif %}
+    {% if include.tags and include.tags.size != 0 %}
+      <div class="tags">
+        Withing tags: {% include listing/tags.html tags=include.tags %}
+      </div>
+    {% endif %}
+    {% if include.paginate %}
+      {% include paginate/{{include.paginate}}.html %}
+    {% endif %}
+    {% if include.comment %}
+      <div class="comment">
+        {% include script/disqus.html %}
+      </div>
+    {% endif %}
+  </article>
+{% endif %}

@@ -13,16 +13,4 @@ layout: default
     {% assign the_content = content %}
   {% endif %}
 {% endcapture %}
-
-<div class="container">
-  <article class="page">
-    <div class="flex align-center mobile-column">
-      <div class="flexitem fill">
-        <h1>{{ the_title }}</h1>
-      </div>
-    </div>
-    <div class="entry">
-      {{ the_content }}
-    </div>
-  </article>
-</div>
+{% include article.html class='page' title=the_title content=the_content %}

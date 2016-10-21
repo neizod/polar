@@ -1,42 +1,22 @@
 ---
 layout: default
-article: false
 ---
 
 {% capture NOOUT %}
   {% include variables/homepage.liquid %}
   {% if homepage-empty %}
     {% include empty/homepage.md %}
+    {% assign article_class = 'page' %}
     {% assign the_title = empty-title %}
     {% assign the_content = empty-content | markdownify %}
+  {% else %}
+    {% assign listing = true %}
   {% endif %}
   {% if homepage-announcement %}
+    {% assign article_class = 'page infobox' %}
     {% assign the_title = page.title | default: site.data.theme.text.empty.announcement %}
     {% assign the_content = content %}
-    {% assign article_class = 'infobox' %}
   {% endif %}
 {% endcapture %}
-
-<div class="container">
-  {% if homepage-empty or homepage-announcement %}
-    <article class="page {{ article_class }}">
-      <div class="flex align-center mobile-column">
-        <div class="flexitem fill">
-          <h1>{{ the_title }}</h1>
-        </div>
-      </div>
-      <div class="entry">
-        {{ the_content }}
-      </div>
-    </article>
-  {% endif %}
-  {% unless homepage-empty %}
-    <div class="posts">
-      {% for collection in site.collections %}
-        {% assign listing_method = collection.listing | default: collection.label %}
-        {% assign feature_option = page.feature[collection.label] %}
-        {% include list/{{listing_method}}.html feature=feature_option %}
-      {% endfor %}
-    </div>
-  {% endunless %}
-</div>
+{% include article.html class=article_class title=the_title content=the_content %}
+{% include listing.html listing=listing %}

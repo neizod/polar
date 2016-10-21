@@ -2,27 +2,7 @@
 layout: default
 ---
 
-<div class="container">
-  <article class="post">
-    <div class="flex align-center mobile-column">
-      <div class="flexitem fill">
-        <h1>{{ page.title }}</h1>
-      </div>
-    </div>
-    <div class="entry">
-      {{ content }}
-    </div>
-    <div class="date">
-      {{ site.data.theme.text.date.post }} {% include date/display.html date=page.date type="long" %}
-    </div>
-    <div class="tags">
-      {% if page.tags.size > 0 %}
-        Within tags: {% include list/tags.html tags=page.tags %}
-      {% endif %}
-    </div>
-    {% include paginate/single.html %}
-    <div class="comment">
-      {% include script/disqus.html %}
-    </div>
-  </article>
-</div>
+{% include article.html class='post'
+           title=page.title content=content
+           date=page.date tags=page.tags
+           paginate='single' comment=true %}
