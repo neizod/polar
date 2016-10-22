@@ -1,52 +1,53 @@
-# Identity Setting
-# ================
-# you should change this to suit your own preference.
+# User Config
+# ===========
+# fill/change these fields to match your own.
 
-title:       Polar                      #TODO title of this site
-description: White-Clean Jekyll Theme   #TODO short description
-logo:        "/assets/img/logo.png"     #TODO logo, recommended 256x256
-cover:       "/assets/img/cover.png"    #TODO cover, recommended 1200x630
+# Identity
+# --------
 
-baseurl: "/polar"                       #TODO leaves blank if already root
-url:     "https://neizod.github.io"     #TODO canonical url w/ protocol
+title:       Polar
+description: White-Clean Jekyll Theme
 
-owner:  neizod                          #TODO site's owner, individual or org
-rights: All Right Reserved              #TODO rights statement
+logo:  "/assets/img/logo.png"
+cover: "/assets/img/cover.png"
+
+baseurl: "/polar"
+url:     "https://neizod.github.io"
+
+owner:  neizod
+rights: All Right Reserved
+
 
 # Social & Sharing
 # ----------------
 
 google:
-  analytics:                            #TODO e.g. U-8152342-4
-  verification:                         #TODO verification string in meta tag
+  analytics:
+  verification:
 
 facebook:
-  username:                             #TODO site's facebook
-  app_id:                               #TODO collect og sharing data
+  username:
+  app_id:
 
 twitter:
-  username:                             #TODO site's twitter
-  widgets:           true               #TODO embed twitter card
-  share_large_image: true               #TODO use large img in twitter card
+  username:
+  large_img: true
 
 disqus:
-  username:                             #TODO if polar.disqus.com, then polar
+  username:
 
 
-# Content Setting
-# ===============
-# you may change this to suit your own preference.
+# Content Format
+# --------------
 
-timezone: Asia/Bangkok                  #TODO post time offset
-paginate: 3                             #TODO nos of excerpt post per page
-mathjax:  true                          #TODO if true, write $ with \\$
+timezone: Asia/Bangkok
+paginate: 3
+mathjax:  true
 
 
-# Engine Setting
-# ==============
+# Engine Config
+# =============
 # you shouldn't change this unless you really know what you're doing.
-
-paginate_path: "/posts/page:num"
 
 collections:
   projects:
@@ -68,6 +69,8 @@ defaults:
       type: projects
     values:
       layout: project
+
+paginate_path: "/posts/page:num"
 
 sass:
   sass_dir: "_sass/"
