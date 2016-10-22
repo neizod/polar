@@ -9,13 +9,9 @@ layout: default
     {% assign the_title = empty-title %}
     {% assign the_content = empty-content | markdownify %}
   {% else %}
-    {% assign listing = true %}
+    {% assign selection = site.empty_array | push: 'posts' %}
   {% endif %}
 {% endcapture %}
 {% include article.html class=article_class title=the_title content=the_content %}
-{% if listing %}
-  <div class="posts">
-    {% include listing/posts.html %}
-  </div>
-  {% include paginate/multiple.html %}
-{% endif %}
+{% include listing.html selection=selection %}
+{% include paginate/multiple.html %}

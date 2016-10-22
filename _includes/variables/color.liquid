@@ -1,0 +1,12 @@
+{% capture NOOUT %}
+  {% capture make_color %}
+    $palette: "{{ site.data.theme.color.palette }}";
+    @import "variables";
+    * {
+      color: $major-color;
+    }
+  {% endcapture %}
+  {% assign make_color = make_color | scssify | strip %}
+  {% assign make_size = make_color | size | minus: 9 %}
+  {% assign color-main = make_color | slice: 8, make_size %}
+{% endcapture %}

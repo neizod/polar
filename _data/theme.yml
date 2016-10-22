@@ -35,6 +35,11 @@ text:
   date:
     post:         Written on
     proj:         Worked on
+  post:
+    tags:         "Within tags:"
+  unconfig:
+    title:        untitled
+    description:  unconfigured theme
   empty:
     announcement: Announcement
   excerpt:

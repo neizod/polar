@@ -3,13 +3,13 @@ layout: default
 ---
 
 {% capture NOOUT %}
-  {% if site.tags.size == 0 %}
-    {% include empty/common_listing.md list='tags' %}
+  {% if site.docs.size == 0 %}
+    {% include empty/common_listing.md list='docs' %}
     {% assign article_class = 'page' %}
     {% assign the_title = empty-title %}
     {% assign the_content = empty-content | markdownify %}
   {% else %}
-    {% assign selection = site.empty_array | push: 'tags' %}
+    {% assign selection = site.empty_array | push: 'docs' %}
   {% endif %}
 {% endcapture %}
 {% include article.html class=article_class title=the_title content=the_content %}

@@ -1,0 +1,5 @@
+{% capture NOOUT %}
+  {% unless site.title %}
+    {% assign unconfig-empty = true %}
+  {% endunless %}
+{% endcapture %}

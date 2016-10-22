@@ -1,0 +1,51 @@
+{% capture NOOUT %}
+  {% include variables/unconfig.liquid %}
+
+  {% assign meta-html_title = site.empty_array %}
+  {% if page.title %}
+    {% assign meta-html_title = meta-html_title | push: page.title %}
+    {% assign meta-html_title = meta-html_title | push: site.data.theme.text.meta.title_sep %}
+  {% endif %}
+  {% if unconfig-empty %}
+    {% assign meta-html_title = meta-html_title | push: site.data.theme.text.unconfig.title %}
+  {% else %}
+    {% assign meta-html_title = meta-html_title | push: site.title %}
+  {% endif %}
+  {% assign meta-html_title = meta-html_title | join: ' ' %}
+
+  {% if page.title %}
+    {% assign meta-title = page.title %}
+  {% else %}
+    {% assign meta-title = site.title | default: site.data.theme.text.unconfig.title %}
+  {% endif %}
+
+  {% if page.excerpt %}
+    {% assign meta-description = page.excerpt | strip_html | strip_newlines | truncate: 160 %}
+  {% else %}
+    {% assign meta-description = site.description %}
+  {% endif %}
+
+  {% assign meta-url = page.url | replace: 'index.html','' | prepend: site.baseurl | prepend: site.url %}
+
+  {% if page.url == '/about.html' %}
+    {% assign meta-type = 'profile' %}
+  {% elsif page.layout == 'post' %}
+    {% assign meta-type = 'article' %}
+  {% elsif page.layout == 'project' or page.layout == 'doc' %}
+    {% assign meta-type = 'product' %}
+  {% else %}
+    {% assign meta-type = 'website' %}
+  {% endif %}
+
+  {% assign meta-img = content | split: '<img ' %}
+  {% assign meta-img = meta-img[1] | split: 'src="' %}
+  {% assign meta-img = meta-img[1] | split: '"' | first %}
+  {% unless meta-img %}
+    {% assign meta-img = site.cover | prepend: site.baseurl %}
+  {% endunless %}
+
+  {% assign meta-vid = content | split: '<iframe ' %}
+  {% assign meta-vid = meta-vid[1] | split: 'src="' %}
+  {% assign meta-vid = meta-vid[1] | split: '"' %}
+  {% assign meta-vid = meta-vid[0] | split: '/' | last %}
+{% endcapture %}

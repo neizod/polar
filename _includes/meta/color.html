@@ -1,10 +1,2 @@
-{% capture color %}
-$palette: "{{ site.data.theme.color.palette }}";
-@import "variables";
-* {
-  color: $major-color;
-}
-{% endcapture %}
-{% assign color = color | scssify | strip %}
-{% assign color-size = color | size | minus: 9 %}
-<meta name="theme-color" content="{{ color | slice: 8, color-size }}" />
+{% include variables/color.liquid %}
+<meta name="theme-color" content="{{ color-main }}" />

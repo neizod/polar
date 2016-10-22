@@ -1,0 +1,10 @@
+{% capture NOOUT %}
+  {% include variables/unconfig.liquid %}
+  {% if unconfig-empty %}
+    {% assign header-title = site.data.theme.text.unconfig.title %}
+    {% assign header-description = site.data.theme.text.unconfig.description %}
+  {% else %}
+    {% assign header-title = site.title %}
+    {% assign header-description = site.description %}
+  {% endif %}
+{% endcapture %}

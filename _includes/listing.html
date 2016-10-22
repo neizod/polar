@@ -1,9 +1,9 @@
-{% if include.listing %}
+{% if include.selection %}
   <div class="posts">
-    {% for collection in site.collections %}
-      {% assign listing_method = collection.listing | default: collection.label %}
-      {% assign feature_option = page.feature[collection.label] %}
-      {% include listing/{{listing_method}}.html feature=feature_option %}
+    {% for item in include.selection %}
+      {% assign label = item | first | default: item %}
+      {% assign feature = include.selection[label] %}
+      {% include listing/{{label}}.html feature=feature %}
     {% endfor %}
   </div>
 {% endif %}

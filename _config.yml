@@ -52,6 +52,8 @@ mathjax:  true
 collections:
   projects:
     output: true
+  docs:
+    output: true
 
 defaults:
   - scope:
@@ -69,6 +71,11 @@ defaults:
       type: projects
     values:
       layout: project
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: doc
 
 paginate_path: "/posts/page:num"
 

@@ -29,9 +29,7 @@
       </div>
     {% endunless %}{% endif %}
     {% if include.tags and include.tags.size != 0 %}
-      <div class="tags">
-        Withing tags: {% include listing/tags.html tags=include.tags %}
-      </div>
+      {% include listing/tags.html tags=include.tags %}
     {% endif %}
     {% if include.paginate %}
       {% include paginate/{{include.paginate}}.html %}

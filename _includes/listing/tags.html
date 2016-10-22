@@ -1,15 +1,40 @@
-{% assign prepath = "#" %}
-{% if include.tags %}
-  {% assign tags = include.tags %}
-  {% assign prepath = prepath | prepend: "/tags.html" | prepend: site.baseurl %}
-{% else %}
-  {% assign tags = site.tags %}
-{% endif %}
-{% for tag in tags %}
-  {% assign tag_size = tag | last | size %}
-  {% assign tag_title = tag %}
-  {% unless include.tags %}
-    {% assign tag_title = tag_title | first %}
-  {% endunless %}
-  <a href="{{ tag_title | slugify | prepend: prepath }}">{{ tag_title }}{% if tag_size > 0 %} ({{ tag_size }}){% endif %}</a>{% unless forloop.last %},{% endunless %}
-{% endfor %}
+{% capture NOOUT %}
+  {% assign prepath = "#" %}
+  {% if include.tags %}
+    {% assign tags = include.tags %}
+    {% assign prepath = prepath | prepend: "/tags.html" | prepend: site.baseurl %}
+    {% assign div_class = 'tags' %}
+  {% else %}
+    {% assign tags = site.tags %}
+    {% assign div_class = 'posts' %}
+  {% endif %}
+{% endcapture %}
+
+{% unless include.tags %}
+  <div class="posts">
+    {% for tag in site.tags %}
+      <div class="target" id="{{ tag | first | slugify }}">
+        {% assign tag_posts = tag | last %}
+        <h2>{{ tag | first }}</h2>
+        <ul>
+          {% for post in tag_posts %}
+            <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+{% endunless %}
+
+<div class="{{ div_class }}">
+  {% if include.tags %}
+    {{ site.data.theme.text.post.tags }}
+  {% else %}
+    <h2>{{ page.title }}</h2>
+  {% endif %}
+  {% for tag in tags %}
+    {% assign tag_title = tag | first | default: tag %}
+    {% assign tag_size = tag | last | size %}
+    <a href="{{ tag_title | slugify | prepend: prepath }}">{{ tag_title }}{% if tag_size > 0 %} ({{ tag_size }}){% endif %}</a>{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+</div>
