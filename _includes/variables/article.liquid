@@ -1,0 +1,19 @@
+{% capture NOOUT %}
+  {% assign article-date = include.display_date | default: include.date %}
+  {% if include.display_date %}
+    {% assign article-format = 'plain' %}
+  {% else %}
+    {% case site.data.theme.date.allow_long %}
+    {% when 'never' %}
+      {% assign article-format = 'short' %}
+    {% when 'always' %}
+      {% assign article-format = 'long' %}
+    {% else %}
+      {% if include.url %}
+        {% assign article-format = 'short' %}
+      {% else %}
+        {% assign article-format = 'long' %}
+      {% endif %}
+    {% endcase %}
+  {% endif %}
+{% endcapture %}

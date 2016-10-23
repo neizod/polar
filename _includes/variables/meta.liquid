@@ -40,12 +40,26 @@
   {% assign meta-img = content | split: '<img ' %}
   {% assign meta-img = meta-img[1] | split: 'src="' %}
   {% assign meta-img = meta-img[1] | split: '"' | first %}
-  {% unless meta-img %}
-    {% assign meta-img = site.cover | prepend: site.baseurl %}
-  {% endunless %}
 
   {% assign meta-vid = content | split: '<iframe ' %}
   {% assign meta-vid = meta-vid[1] | split: 'src="' %}
   {% assign meta-vid = meta-vid[1] | split: '"' %}
   {% assign meta-vid = meta-vid[0] | split: '/' | last %}
+
+  {% case site.twitter.large_img %}
+  {% when 'always' %}
+    {% assign meta-twitter_large_img = true %}
+  {% when 'never' %}
+    {% assign meta-twitter_large_img = false %}
+  {% else %}
+    {% if meta-img or meta-vid %}
+      {% assign meta-twitter_large_img = true %}
+    {% else %}
+      {% assign meta-twitter_large_img = false %}
+    {% endif %}
+  {% endcase %}
+
+  {% unless meta-img %}
+    {% assign meta-img = site.cover | prepend: site.baseurl %}
+  {% endunless %}
 {% endcapture %}

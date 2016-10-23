@@ -1,43 +1,16 @@
+{% include variables/article.liquid %}
 {% if include.content %}
   <article class="{% if include.url %}excerpt {% endif %}{{ include.class }}">
-    {% include article/title.html title=include.title
-               url=include.url quota=include.quota
-               date=include.date display_date=include.display_date %}
+    {% include article/title.html title=include.title url=include.url %}
+    {% include article/info.html tags=include.tags date=article-date format=article-format %}
     {% unless include.url %}
       {% include article/project_demo.html demo=include.demo source=include.source %}
     {% endunless %}
-    <div class="{% if include.url %}excerpt {% endif %}entry">
+    <div class="entry">
       {{ include.content }}
-      {% if include.url %}
-        <a href="{{ include.url | prepend: site.baseurl }}">{{ site.data.theme.text.excerpt.read_more }}</a>
-        {% if include.demo %}
-          / <a href="{{ include.demo }}">{{ site.data.theme.text.project.demo }}</a>
-        {% endif %}
-        {% if include.source %}
-          / <a href="{{ include.source }}">{{ site.data.theme.text.project.source }}</a>
-        {% endif %}
-      {% endif %}
+      {% include article/read_more.html url=include.url demo=include.demo source=include.source %}
     </div>
-    {% if include.date %}{% unless include.url %}
-      <div class="date">
-        {{ site.data.theme.text.date.post }} {% include date/display.html date=include.date type='long' %}
-      </div>
-    {% endunless %}{% endif %}
-    {% if include.display_date %}{% unless include.url %}
-      <div class="date">
-        {{ site.data.theme.text.date.proj }} {{ include.display_date }}
-      </div>
-    {% endunless %}{% endif %}
-    {% if include.tags and include.tags.size != 0 %}
-      {% include listing/tags.html tags=include.tags %}
-    {% endif %}
-    {% if include.paginate %}
-      {% include paginate/{{include.paginate}}.html %}
-    {% endif %}
-    {% if include.comment %}
-      <div class="comment">
-        {% include script/disqus.html %}
-      </div>
-    {% endif %}
+    {% include article/paginate.html paginate=include.paginate %}
+    {% include article/comment.html comment=include.comment %}
   </article>
 {% endif %}

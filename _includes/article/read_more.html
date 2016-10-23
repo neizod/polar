@@ -1,0 +1,11 @@
+{% if include.url %}
+  <a href="{{ include.url | prepend: site.baseurl }}">{{ site.data.theme.text.excerpt.read_more }}</a>
+  {% if include.demo %}
+    {{ site.data.theme.text.excerpt.item_sep }}
+    <a href="{{ include.demo }}">{{ site.data.theme.text.project.demo }}</a>
+  {% endif %}
+  {% if include.source %}
+    {{ site.data.theme.text.excerpt.item_sep }}
+    <a href="{{ include.source }}">{{ site.data.theme.text.project.source }}</a>
+  {% endif %}
+{% endif %}

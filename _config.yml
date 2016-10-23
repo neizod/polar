@@ -31,7 +31,7 @@ facebook:
 
 twitter:
   username:
-  large_img: true
+  large_img: sometimes
 
 disqus:
   username:

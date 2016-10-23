@@ -1,28 +1,9 @@
 <div class="flex align-center mobile-column">
-  <div class="flexitem fill">
+  <h1>
     {% if include.url %}
-      <h1><a href="{{ include.url | prepend: site.baseurl }}">{{ include.title }}</a></h1>
+      <a href="{{ include.url | prepend: site.baseurl }}">{{ include.title }}</a>
     {% else %}
-      <h1>{{ include.title }}</h1>
+      {{ include.title }}
     {% endif %}
-  </div>
-  {% if include.url %}
-    <div class="mark {% if include.quota >= 0 %}feature{% endif %} flexitem mobile-first">
-      {% if include.display_date %}
-        {% if include.quota < 0 %}
-          {{ include.display_date }}
-        {% else %}
-          {{ site.data.theme.text.mark.feature_proj }}
-        {% endif %}
-      {% elsif include.date %}
-        {% if include.quota < 0 %}
-          {% include date/display.html date=include.date %}
-        {% elsif include.quota > 0 %}
-          {{ site.data.theme.text.mark.latest_post }}
-        {% else %}
-          {{ site.data.theme.text.mark.feature_post }}
-        {% endif %}
-      {% endif %}
-    </div>
-  {% endif %}
+  </h1>
 </div>

@@ -10,7 +10,7 @@ color:
 date:
   short:      "%B %e, %Y"
   long:       "%A, %B %e, %Y, %I:%M %p"
-  allow_long: true
+  allow_long: sometimes
 
 
 #TODO you may change navigation behavior here.
@@ -32,11 +32,6 @@ text:
     title_sep:    "|"
   menu:
     item_sep:     "⋅"
-  date:
-    post:         Written on
-    proj:         Worked on
-  post:
-    tags:         "Within tags:"
   unconfig:
     title:        untitled
     description:  unconfigured theme
@@ -44,10 +39,7 @@ text:
     announcement: Announcement
   excerpt:
     read_more:    Read More
-  mark:
-    latest_post:  Latest Post
-    feature_post: Feature Post
-    feature_proj: Feature Project
+    item_sep:     "/"
   paginate:
     left_symbol:  «
     right_symbol: »

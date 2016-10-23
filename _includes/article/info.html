@@ -1,0 +1,8 @@
+<div class="flex align-center mobile-column">
+  {% if include.date %}
+    {% include display/date.html date=include.date format=include.format %}
+  {% endif %}
+  {% if include.tags %}
+    {% include listing/tags.html tags=include.tags %}
+  {% endif %}
+</div>

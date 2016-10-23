@@ -27,11 +27,9 @@
 {% endunless %}
 
 <div class="{{ div_class }}">
-  {% if include.tags %}
-    {{ site.data.theme.text.post.tags }}
-  {% else %}
+  {% unless include.tags %}
     <h2>{{ page.title }}</h2>
-  {% endif %}
+  {% endunless %}
   {% for tag in tags %}
     {% assign tag_title = tag | first | default: tag %}
     {% assign tag_size = tag | last | size %}
