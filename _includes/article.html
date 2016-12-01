@@ -9,6 +9,7 @@
     <div class="entry">
       {{ include.content }}
       {% include article/read_more.html url=include.url demo=include.demo source=include.source %}
+      {% include article/origin.html origin=include.origin %}
     </div>
     {% include article/paginate.html paginate=include.paginate %}
     {% include article/comment.html comment=include.comment %}

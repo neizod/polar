@@ -4,7 +4,7 @@ layout: default
 
 {% capture NOOUT %}
   {% if site.posts.size == 0 %}
-    {% include empty/common_listing.md list='posts' %}
+    {% include config/empty/common_listing.md list='posts' %}
     {% assign article_class = 'page' %}
     {% assign the_title = empty-title %}
     {% assign the_content = empty-content | markdownify %}

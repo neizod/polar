@@ -6,9 +6,9 @@ layout: default
   {% include variables/unconfig.liquid %}
   {% include variables/homepage.liquid %}
   {% if unconfig-empty %}
-    {% include empty/unconfig.md %}
+    {% include config/empty/unconfig.md %}
   {% elsif homepage-empty %}
-    {% include empty/homepage.md %}
+    {% include config/empty/homepage.md %}
   {% else %}
     {% assign selection = page.feature %}
   {% endif %}

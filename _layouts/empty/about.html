@@ -5,7 +5,7 @@ layout: default
 {% capture NOOUT %}
   {% assign content_size = content | normalize_whitespace | size %}
   {% if content_size == 0 %}
-    {% include empty/about.md %}
+    {% include config/empty/about.md %}
     {% assign the_title = empty-title %}
     {% assign the_content = empty-content | markdownify %}
   {% else %}

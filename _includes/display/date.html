@@ -3,13 +3,13 @@
     {% if site.data.theme.date.long %}
       {{ include.date | date: site.data.theme.date.long }}
     {% else %}
-      {% include date/long.html date=include.date %}
+      {% include config/date/long.html date=include.date %}
     {% endif %}
   {% elsif include.format == 'short' %}
     {% if site.data.theme.date.short %}
       {{ include.date | date: site.data.theme.date.short }}
     {% else %}
-      {% include date/short.html date=include.date %}
+      {% include config/date/short.html date=include.date %}
     {% endif %}
   {% else %}
     {{ include.date }}

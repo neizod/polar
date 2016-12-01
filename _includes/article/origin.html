@@ -1,0 +1,13 @@
+{% if include.origin %}
+  <em>
+    {{ site.data.theme.text.post.origin }}
+    {% for each in include.origin %}
+      {% if each.url %}
+        <a href="{{ each.url }}">{{ each.name }}</a>
+      {% else %}
+        {{ each.name }}
+      {% endif %}
+      {% unless forloop.last %}/{% endunless %}
+    {% endfor %}
+  </em>
+{% endif %}

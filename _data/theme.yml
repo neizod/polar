@@ -47,6 +47,8 @@ text:
     of_page:      " of "
     prev_page:    Prev
     next_page:    Next
+  post:
+    origin:       "Originally posted on: "
   project:
     demo:         Live Demo!
     source:       Source Code

@@ -5,13 +5,14 @@
   </head>
   <body class="flex column">
     <div class="mainmatter flexitem fill">
-      {% include header.html %}
       <div class="container">
+        {% include header.html %}
         {{ content }}
       </div>
     </div>
-    {% include footer.html %}
-    {% include script/analytics.html %}
-    {% include style/fonts.html %}
+    <div class="container">
+      {% include footer.html %}
+    </div>
+    {% include postload.html %}
   </body>
 </html>
