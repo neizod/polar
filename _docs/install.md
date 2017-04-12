@@ -1,5 +1,6 @@
 ---
 title: Installation
+order: 1
 ---
 
 {: .infobox .float-right}

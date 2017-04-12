@@ -1,5 +1,6 @@
 ---
 title: Maintenance Theme
+order: 3
 ---
 
 {: .infobox .float-right}

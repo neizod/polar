@@ -1,5 +1,6 @@
 ---
 title: Configuration
+order: 2
 ---
 
 {: .infobox .float-right}
