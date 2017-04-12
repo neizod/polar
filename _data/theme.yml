@@ -20,6 +20,8 @@ navigation:
       path: "/posts"
     - name: Projects
       path: "/projects"
+    - name: Documents
+      path: "/docs"
     - name: About
       path: "/about"
   paginate:
