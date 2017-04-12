@@ -1,6 +1,9 @@
+{% capture NOOUT %}
+  {% assign sorted_docs = site.docs | sort: 'order' %}
+{% endcapture %}
 <h2>Documents</h2>
 <ol>
-  {% for doc in site.docs %}
+  {% for doc in sorted_docs %}
     <li><a href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a></li>
   {% endfor %}
 </ol>
