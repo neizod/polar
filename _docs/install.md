@@ -10,7 +10,7 @@ order: 1
 > {: toc}
 
 
-Note: this whole section is not require if you plan to host your blog on GitHub Pages without previewing your posts before publish them.
+Note: this whole section is not require if you plan to host your blog on GitHub Pages __without__ previewing your posts on your own machine before publishing them. To do that, just fork [this theme][], then rename the repository into `your_github_username.github.io`.
 
 
 ## Install Jekyll
@@ -34,11 +34,11 @@ If you get some nicely output, congratulation you have just installed the engine
 
 There are 2 methods of installation: the easy one and the hard one. Former method allow quick and easy installation, however you might find its hard to upgrade theme later. On the contrary, the later method provide much joyful time when you need to upgrade it.
 
-You can choose to read only one method, if you're not interest in another.
+You may choose to read and follow only one method, if you're not interest in another.
 
 ### Easy: Copy-Paste
 
-If you have installed Jekyll's theme before, you might recall that this is a common method almost every guide tell you. To do this, first go to [this theme's releases page on GitHub][Polar releases]. Download a zip file of the latest (or your desired) version, then extract it to a directory that you want to store your blog data.
+If you have installed Jekyll's theme before, you might recall that this is a common method almost every guide tell you. To do this, first go to [this theme's releases page on GitHub][Polar releases]. Download a zip file of the latest (or your desired) version, then extract it into a directory that you want to store your blog data.
 
 For example, if your blog is going to be at `borg/`, then your directory structure should look like to this:
 
@@ -55,7 +55,7 @@ For example, if your blog is going to be at `borg/`, then your directory structu
 
 ### Hard: Git Remote
 
-So you like the hard way. I assume-- though not required --you already have some experience on how to resolve merge conflict.
+So you like the hard way? I like that. Here I assume-- though not required --you already have some experience on how to resolve merge conflict.
 
 To start this method, create a new Git repository at a location that you want your blog to be stored (for this example, the location is `borg/`):
 
@@ -86,12 +86,12 @@ So you have decided which version to use, install it with:
 ~/borg $ git merge theme/<version>
 ```
 
-Later on, you want to upgrade the theme, just run above three commands (from `git fetch` until `git merge`) again.
+Later on, if you want to upgrade the theme, just run above three commands (from `git fetch` until `git merge`) again.
 
 
 ## Test Run
 
-Suppose you've install Jekyll and theme on your machine, you can see your fresh new site by navigating into the directory and run:
+Suppose you've installed Jekyll engine and this theme on your machine, you can see your fresh new site by navigating into the directory and run:
 
 ``` shell
 ~/borg $ jekyll serve
@@ -104,5 +104,6 @@ Then switch to web browser and enter this address into URL bar:
 You should see a website similar to this page running.
 
 
+[this theme]: //github.com/neizod/polar
 [Jekyll install]: //jekyllrb.com/docs/installation/
 [Polar releases]: //github.com/neizod/polar/releases

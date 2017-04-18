@@ -1,6 +1,7 @@
 ---
-title: Maintenance Theme
-order: 3
+title: Maintenance
+order: 2
+comment: should be 2, since the para "I put it here since the content is similar to prev".
 ---
 
 {: .infobox .float-right}
@@ -10,7 +11,7 @@ order: 3
 > {: toc}
 
 
-This section will help you maintain the theme with Git __if__ you choose to install it with Git remote (the hard way). If you do copy-paste install, then you already know how to upgrade.
+This section will help you maintain the theme with Git __if__ you choose to install it with Git remote (the hard way). If you do copy-paste install, then you already know how to upgrade (copy-paste new theme and fill-in those variables again).
 
 Also if you just finish installed the theme, you don't need to read this section now. I put it here since the content is similar to previous section.
 
@@ -50,12 +51,14 @@ The above diagram says that you first install the theme `v.1.0.0` at `m1` and th
 
 Your history will became:
 
+TODO change (m1) to (i1) to prevent confusion w/ command option?
+
     master:      (m1) --- (A) --- (B) --- (m2) --- (C) --- (D) --- (^m2)
                   /                        /
                  /                        /
     theme:  (v.1.0.0) -------------- (v.2.0.0)
 
-Which state that you have _uninstall_ theme `v.2.0.0` at commit `^m2`. Since you have theme `v.1.0.0` installed before, it will render your blog with that old theme version.
+Which states that you have _uninstall_ theme `v.2.0.0` at commit `^m2`. Since you have theme `v.1.0.0` installed before, it will render your blog with that old theme version.
 
 __Important note on this method__: if you later decide to upgrade theme again, for example when you heard that theme `v.2.1.0` already fix the earlier uglyness, you have to undo the above downgrade before an upgrade, says:
 
@@ -87,7 +90,7 @@ Completely uninstall theme is as same as downgrade, but this time you have to ap
 ~/borg $ git commit -m 'Uninstall theme'
 ```
 
-Should you find yourself had hard time listing all the merges, change first line to this for automate listing:
+Should you find yourself had a hard time listing all the merges, change the first line to this long command for automate listing (success not garantee, many people suggested that you should never do the automate Git merge/undo):
 
 ``` shell
 ~/borg $ git revert -nm1 -Xtheirs $( git rev-list --parents master |

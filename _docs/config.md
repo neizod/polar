@@ -1,6 +1,6 @@
 ---
 title: Configuration
-order: 2
+order: 3
 ---
 
 {: .infobox .float-right}
@@ -52,17 +52,17 @@ You also need to change above 2 image files _and_ a file `/favicon.ico`.
 
 ## Social
 
-You may omit some config here.
+This section is about social & sharing config. You may omit some or all of the config here.
 
-| Field                 | Description                                                         |
-| --------------------- | ------------------------------------------------------------------- |
-| `google.analytics`    | [Google Analytics][] tracking id                                    |
-| `google.verification` | [Google Search Console][] verification token in `<meta>` tag        |
-| `facebook.username`   | Facebook username of the owner: a profile or Facebook page.         |
-| `facebook.app_id`     | [Facebook Apps][] (seems not necessary but recommended by Facebook) |
-| `twitter.username`    | Twitter username of the owner, without preceeding `@` symbol.       |
-| `twitter.large_img`   | Show large image on Twitter? Choices: `never`, `content`, `always`  |
-| `disqus.username`     | Need a comment system? Supply your Disqus username here.            |
+| Field                 | Description                                                                                                     |
+| --------------------- | --------------------------------------------------------------------------------------------------------------- |
+| `google.analytics`    | [Google Analytics][] tracking id                                                                                |
+| `google.verification` | [Google Search Console][] verification token in `<meta>` tag                                                    |
+| `facebook.username`   | Facebook username of the owner: a profile or Facebook page.                                                     |
+| `facebook.app_id`     | [Facebook Apps][] (seems not necessary but recommended by Facebook)                                             |
+| `twitter.username`    | Twitter username of the owner, without preceeding `@` symbol.                                                   |
+| `twitter.large_img`   | Show large image when sharing to Twitter? Choices are: `never`, `content` (if content has image), or `always`.  |
+| `disqus.username`     | Need a comment system? Supply your Disqus username here.                                                        |
 
 Example:
 
