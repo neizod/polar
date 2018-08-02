@@ -16,7 +16,7 @@
     font-style: italic;
 }
 .quote > p:last-child::before {
-    content: "— ";
+    content: "\2014\00a0";
 }
 
 
@@ -43,8 +43,7 @@
 
 
 .oversized {
-    @extend .flex;
-    @extend .flex.column;
+    @extend .flex, .column;
     padding: 0;
     border: none;
     overflow-x: auto;

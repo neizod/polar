@@ -77,6 +77,7 @@ defaults:
     values:
       layout: doc
 
+permalink: date
 paginate_path: "/posts/page:num"
 
 sass:
@@ -87,7 +88,7 @@ exclude:
   - README.md
   - LICENSE.txt
 
-gems:
+plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
