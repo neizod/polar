@@ -50,7 +50,7 @@ text:
     prev_page:    Prev
     next_page:    Next
   post:
-    origin:       "Originally pubhlished on: "
+    origin:       "Originally published on: "
   project:
     demo:         Live Demo!
     source:       Source Code
