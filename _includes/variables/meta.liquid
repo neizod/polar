@@ -41,10 +41,12 @@
   {% assign meta-img = meta-img[1] | split: 'src="' %}
   {% assign meta-img = meta-img[1] | split: '"' | first %}
 
-  {% assign meta-vid = content | split: '<iframe ' %}
-  {% assign meta-vid = meta-vid[1] | split: 'src="' %}
-  {% assign meta-vid = meta-vid[1] | split: '"' %}
-  {% assign meta-vid = meta-vid[0] | split: '/' | last %}
+  {% unless meta-img %}
+    {% assign meta-vid = content | split: '<iframe ' %}
+    {% assign meta-vid = meta-vid[1] | split: 'src="' %}
+    {% assign meta-vid = meta-vid[1] | split: '"' %}
+    {% assign meta-vid = meta-vid[0] | split: '/' | last %}
+  {% endunless %}
 
   {% case site.twitter.large_img %}
   {% when 'always' %}
