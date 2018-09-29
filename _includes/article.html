@@ -4,7 +4,7 @@
     {% include article/title.html title=include.title url=include.url %}
     {% include article/info.html tags=include.tags date=article-date format=article-format %}
     {% unless include.url %}
-      {% include article/project_demo.html demo=include.demo source=include.source %}
+      {% include menu/demo_source.html demo=include.demo source=include.source %}
     {% endunless %}
     <div class="entry">
       {{ include.content }}

@@ -16,17 +16,17 @@
 }
 
 
-.project .info {
+.submenu.info {
     div {
         padding: 0.33em;
         text-align: center;
     }
 
-    .demo {
+    .primary {
         background: $major-color;
     }
 
-    .source {
+    .secondary {
         background: $minor-color;
     }
 }
@@ -35,10 +35,13 @@
 .date {
     font-family: $font-head;
     font-style: italic;
+    flex: 0 0 auto;
+    align-self: stretch;
 }
 
 
-.tags {
+.mini-title, .tags {
     margin: 0 1em;
     font-family: $font-head;
+    align-self: stretch;
 }

@@ -9,10 +9,8 @@ layout: default
     {% assign the_title = empty-title %}
     {% assign the_content = empty-content | markdownify %}
   {% else %}
-    {% assign selection = site.empty_array | push: 'posts' %}
+    {% assign selection = site.empty_array | push: 'archive' %}
   {% endif %}
 {% endcapture %}
-{% include menu/archive_tags.html %}
 {% include article.html class=article_class title=the_title content=the_content %}
 {% include listing.html selection=selection %}
-{% include paginate/multiple.html %}

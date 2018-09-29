@@ -51,6 +51,8 @@ text:
     next_page:    Next
   post:
     origin:       "Originally published on: "
+    archive:      Archive
+    tags:         Tags
   project:
     demo:         Live Demo!
     source:       Source Code

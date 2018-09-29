@@ -1,0 +1,11 @@
+<div class="archive">
+  <h2>{{ page.title }}</h2>
+  {% for post in site.posts %}
+  <div class="flex mobile-column">
+    {% include display/date.html date=post.date format='short' %}
+    <div class="mini-title">
+      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
