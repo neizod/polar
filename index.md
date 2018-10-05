@@ -1,5 +1,6 @@
 ---
 layout: empty/homepage
+regenerate: true
 feature:
   posts:
     latest: 1
