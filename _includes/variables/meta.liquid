@@ -37,9 +37,13 @@
     {% assign meta-type = 'website' %}
   {% endif %}
 
-  {% assign meta-img = content | split: '<img ' %}
-  {% assign meta-img = meta-img[1] | split: 'src="' %}
-  {% assign meta-img = meta-img[1] | split: '"' | first %}
+  {% assign meta-img = page.thumbnail %}
+
+  {% unless meta-img %}
+    {% assign meta-img = content | split: '<img ' %}
+    {% assign meta-img = meta-img[1] | split: 'src="' %}
+    {% assign meta-img = meta-img[1] | split: '"' | first %}
+  {% endunless %}
 
   {% unless meta-img %}
     {% assign meta-vid = content | split: '<iframe ' %}
