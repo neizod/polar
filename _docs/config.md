@@ -10,26 +10,26 @@ order: 3
 > {: toc}
 
 
-So you have a fresh new empty blog. Now it's time to claim it your own by supplying your informations such as name and logo.
+So you have a fresh new empty blog. Now it's time to claim it your own by supplying your information such as the name and logo.
 
-The configuration file for this task is located at `_config.yml`. Each time you edit this file, you __must__ restart Jekyll in order to apply changes.
+The configuration file for this task is located at `_config.yml`. Each time you edit this file, you __must__ restart Jekyll in order to apply the changes made.
 
-There are 4 sections in this config file: identity, social, content and engine. However you should change only first 3 sections, the last section is theme's default variables and must not be altered if you want your blog working properly.
+There are 4 sections in this config file: identity, social, content and engine. However, you need to change only first 3 sections; the last section consists of the theme's default variables and must not be altered if you want your blog to be working properly.
 
 
 ## Identity
 
-We begins with identity setting: who you are. You must fill in every box in this section.
+We begin with the identity setting: who you are. You must fill in every box in this section.
 
 | Field         | Description                                                                                                                        |
 | -----------   | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `title`       | Blog name. Show on top of page.                                                                                                    |
-| `description` | Blog description, should be short. Show under blog name.                                                                           |
-| `logo`        | Path to logo image, 256x256 pixels. Show on top of page, and also use as HD icon.                                                  |
-| `cover`       | Path to cover image, 1200x630 pixels. Will be use as placholder image when share on social.                                        |
-| `baseurl`     | If you host your blog at root URL, leave blank. Otherwise, it's an URL path to your blog _after_ domain name _with_ leading slash. |
+| `title`       | Blog name. Shown on top of the page.                                                                                                    |
+| `description` | Blog description, should be short. Shown under blog name.                                                                           |
+| `logo`        | Path to logo image, 256x256 pixels. Shown on top of the page, and also used as HD icon.                                                  |
+| `cover`       | Path to cover image, 1200x630 pixels. Will be used as a placholder image when released.                                        |
+| `baseurl`     | If you host your blog at root URL, leave this blank. Otherwise, it's an URL path to your blog _after_ domain name _with_ leading slash. |
 | `url`         | Your blog URL domain name _without_ trailing slash, but _with_ the protocol (use `https://` to force HTTPS).                       |
-| `owner`       | Person or organization whose own this blog. Show in rights notice at bottom of page.                                               |
+| `owner`       | Person or organization who own this blog. Shown in 'rights' notice at bottom of the page.                                               |
 | `rights`      | Legal conditions, e.g., "All Right Reserved", "CC BY-NC".                                                                          |
 
 Example:
@@ -47,7 +47,7 @@ owner:  neizod
 rights: All Right Reserved
 ```
 
-You also need to change above 2 image files _and_ a file `/favicon.ico`.
+You also need to change the above 2 image files _and_ a file `/favicon.ico`.
 
 
 ## Social
@@ -59,9 +59,9 @@ This section is about social & sharing config. You may omit some or all of the c
 | `google.analytics`    | [Google Analytics][] tracking id                                                                                |
 | `google.verification` | [Google Search Console][] verification token in `<meta>` tag                                                    |
 | `facebook.username`   | Facebook username of the owner: a profile or Facebook page.                                                     |
-| `facebook.app_id`     | [Facebook Apps][] (seems not necessary but recommended by Facebook)                                             |
+| `facebook.app_id`     | [Facebook Apps][] (is not necessary, but recommended by Facebook)                                             |
 | `twitter.username`    | Twitter username of the owner, without preceeding `@` symbol.                                                   |
-| `twitter.large_img`   | Show large image when sharing to Twitter? Choices are: `never`, `content` (if content has image), or `always`.  |
+| `twitter.large_img`   | Shown as a large image when sharing to Twitter. Choices are: `never`, `content` (if content has image), or `always`.  |
 | `disqus.username`     | Need a comment system? Supply your Disqus username here.                                                        |
 
 Example:
@@ -86,11 +86,11 @@ disqus:
 
 ## Content
 
-This section is a bit short, since there will be a config like this in file `_data/theme.yml` too. It exists here since Jekyll required it to be here.
+This section is a bit short, since there will be a config like this in file `_data/theme.yml` too. It exists here since Jekyll requires it to be here.
 
 | Field      | Description                                                                                                                                                                 |
 | ---------- | -------------------------------------------------------------------                                                                                                         |
-| `timezone` | Your timezone, either in `<region>/<city>` format or `+-tttt` is fine. Not required if you really don't care about exact time of each blog post.                            |
+| `timezone` | Your timezone, either in `<region>/<city>` format or `+-tttt`. Is not required if you really don't care about the exact time of each of the blog posts.                            |
 | `paginate` | Number of posts displaying in "List Posts" page.                                                                                                                            |
 | `mathjax`  | Need LaTeX math? If true then insert inline math with single dollar (`$`), displayed math need own lines and double dollar (`$$`). Prepend backslash for normal one (`\$`). |
 
