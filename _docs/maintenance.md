@@ -11,14 +11,14 @@ comment: should be 2, since the para "I put it here since the content is similar
 > {: toc}
 
 
-This section will help you maintain the theme with Git __if__ you choose to install it with Git remote (the hard way). If you do copy-paste install, then you already know how to upgrade (copy-paste new theme and fill-in those variables again).
+This section will help you maintain the theme with Git __if__ you choose to install it with Git remote (the hard way). If you do the copy-paste install, then you already know how to upgrade (copy-paste the new theme and fill-in those variables again).
 
-Also if you just finish installed the theme, you don't need to read this section now. I put it here since the content is similar to previous section.
+If you have just finished installing the theme, you don't need to read this section now!
 
 
 ## Upgrade
 
-Same as install, except you didn't need to tell where to get code again. So basically just:
+Same as install, except you don't need to specify where you're getting the code from again. So basically just:
 
 ``` shell
 ~/borg $ git fetch theme
@@ -26,7 +26,7 @@ Same as install, except you didn't need to tell where to get code again. So basi
 ~/borg $ git merge theme/<version>
 ```
 
-Or if you're OK with a nightly build (though I'm strongly __not__ recommend that), the process is even much simpler:
+Or if you're OK with a nightly build (though I strongly __do not__ recommend that), the process is even simpler:
 
 ``` shell
 ~/borg $ git fetch theme
@@ -36,20 +36,20 @@ Or if you're OK with a nightly build (though I'm strongly __not__ recommend that
 
 ## Downgrade
 
-I hope you really don't need to read this topic, since it is quite a messy process, but here we go. Suppost you've installed the theme and upgrade it once, your Git history may look like this:
+I hope you won't need to read this topic, since it's quite a messy process, but here we go. Suppose you installed the theme and upgraded it once, then your Git history may look like this:
 
     master:      (m1) --- (A) --- (B) --- (m2) --- (C) --- (D)
                   /                        /
                  /                        /
     theme:  (v.1.0.0) -------------- (v.2.0.0)
 
-The above diagram says that you first install the theme `v.1.0.0` at `m1` and then upgrade to `v.2.0.0` at `m2`. Now you don't like the look of theme `v.2.0.0` and want to revert back to `v.1.0.0`, this magic command will do the trick:
+The above diagram says that you first installed the theme `v.1.0.0` at `m1` and then upgraded to `v.2.0.0` at `m2`. Now if you don't like the look of theme `v.2.0.0` and want to revert back to `v.1.0.0`, this magic command will do the trick:
 
 ``` shell
 ~/borg $ git revert -m 1 <sha_of_m2>
 ```
 
-Your history will became:
+Your history will show:
 
 TODO change (m1) to (i1) to prevent confusion w/ command option?
 
@@ -58,39 +58,40 @@ TODO change (m1) to (i1) to prevent confusion w/ command option?
                  /                        /
     theme:  (v.1.0.0) -------------- (v.2.0.0)
 
-Which states that you have _uninstall_ theme `v.2.0.0` at commit `^m2`. Since you have theme `v.1.0.0` installed before, it will render your blog with that old theme version.
+Which states that you have _uninstalled_ theme `v.2.0.0` at commit `^m2`. 
+Since you had `v.1.0.0` installed before, it will render your blog with that old version.
 
-__Important note on this method__: if you later decide to upgrade theme again, for example when you heard that theme `v.2.1.0` already fix the earlier uglyness, you have to undo the above downgrade before an upgrade, says:
+__Important note__: if you later decide to upgrade the theme again, for example, once you hear that theme `v.2.1.0` has already fixed the previous ugliness, you have to undo the above downgrade before an upgrade:
 
 ``` shell
 ~/borg $ git revert <sha_of_^m2>
 ~/borg $ git merge theme/v.2.1.0
 ```
 
-If you find problem with the downgrade, read more at [Git: Undoing Merges][]
+If you experience problems with the downgrade, read more at [Git: Undoing Merges][]
 
 
 ## Uninstall
 
-Sorry to see you go. I hope you find your suitable theme!
+Sorry to see you go. I hope you find your theme!
 
-Uninstall process is much messy-- yet as same --as downgrade. So I think you should read previous topic before going on.
+The uninstall process is much messier -- yet similar -- to the downgrade, so I think you should read the previous section before going on.
 
-Suppose you have install 3 versions of this theme, namely `v.1.0.0`, `v.1.0.1` and `v.1.2.0`. History diagram is:
+Suppose you have installed 3 versions of this theme, namely `v.1.0.0`, `v.1.0.1` and `v.1.2.0`. The history diagram will be:
 
     master:      (m1) --- (A) --- (m2) --- (B) --- (m3)
                   /                /                /
                  /                /                /
     theme:  (v.1.0.0) ------ (v.1.0.1) ------ (v.1.2.0)
 
-Completely uninstall theme is as same as downgrade, but this time you have to apply it on all installed versions (order does matter, must arrange from newest to oldest).
+Completely uninstalling the theme is done the same as downgrading, but this time you have to apply it to all installed versions (order does matter, you must do it from newest to oldest):
 
 ``` shell
 ~/borg $ git revert -nm1 -Xtheirs <sha_of_m3> <sha_of_m2> <sha_of_m1>
 ~/borg $ git commit -m 'Uninstall theme'
 ```
 
-Should you find yourself had a hard time listing all the merges, change the first line to this long command for automate listing (success not garantee, many people suggested that you should never do the automate Git merge/undo):
+Should you find yourself having a hard time listing all the merges, change the first line to this long command for automated listing (success not guaranteed; it has been suggested that you should never do the auto Git merge/undo):
 
 ``` shell
 ~/borg $ git revert -nm1 -Xtheirs $( git rev-list --parents master |
@@ -99,14 +100,14 @@ Should you find yourself had a hard time listing all the merges, change the firs
                                      awk '{print $1}' )
 ```
 
-Your final history will became:
+Your final history will look like this:
 
     master:      (m1) --- (A) --- (m2) --- (B) --- (m3) --- (^m3^m2^m1)
                   /                /                /
                  /                /                /
     theme:  (v.1.0.0) ------ (v.1.0.1) ------ (v.1.2.0)
 
-Finally, remove tags and remote theme.
+Finally, remove tags and the remote theme.
 
 ``` shell
 ~/borg $ git tag -d $( git tag | grep '^theme/' )
