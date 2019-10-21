@@ -116,7 +116,7 @@ Finally, remove tags and the remote theme.
 
 And now you're ready for your new theme!
 
-__Important note, again__: like stated in the former topic, to reinstall this theme in the future, don't forget to revert the reverted.
+__Important note, again__: if you have installed and then uninstalled this theme in the past with the `git revert` command, and now want to re-install it, run `git revert` on the uninstalled commit.
 
 
 [Git: Undoing Merges]: //git-scm.com/blog/2010/03/02/undoing-merges.html
