@@ -86,7 +86,8 @@ sass:
 
 exclude:
   - README.md
-  - LICENSE.txt
+  - LICENSE.md
+  - CONTRIBUTING.md
 
 plugins:
   - jekyll-sitemap
