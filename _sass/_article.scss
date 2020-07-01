@@ -17,8 +17,6 @@
 
 
 .submenu.info {
-    font-family: $font-head;
-
     div {
         padding: 0.33em;
         text-align: center;
@@ -39,6 +37,14 @@
     font-style: italic;
     flex: 0 0 auto;
     align-self: stretch;
+}
+
+
+.archive .date {
+    font-family: $font-head;
+    font-style: italic;
+    flex: 0 0 auto;
+    width: 120px;
 }
 
 

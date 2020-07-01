@@ -1,11 +1,20 @@
 <div class="archive">
-  <h2>{{ page.title }}</h2>
+  <h1>{{ page.title }}</h1>
   {% for post in site.posts %}
-  <div class="flex mobile-column">
-    {% include display/date.html date=post.date format='short' %}
-    <div class="mini-title">
-      <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    {% assign this_year = post.date | date: "%Y" %}
+    {% if prev_year != this_year %}
+      <div class="flex mobile-column">
+        <div class="mini-date" style="min-width: 200px; flex-basis: auto;">
+          <h2>{{ this_year }}</h2>
+        </div>
+      </div>
+    {% endif %}
+    {% assign prev_year = this_year %}
+    <div class="flex mobile-column">
+      {% include display/date.html date=post.date format='month-day' %}
+      <div class="mini-title">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </div>
     </div>
-  </div>
   {% endfor %}
 </div>

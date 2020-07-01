@@ -11,6 +11,8 @@
     {% else %}
       {% include config/date/short.html date=include.date %}
     {% endif %}
+  {% elsif include.format == 'month-day' %}
+    {{ include.date | date: "%B %e" }}
   {% else %}
     {{ include.date }}
   {% endif %}
