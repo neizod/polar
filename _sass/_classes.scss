@@ -140,6 +140,10 @@
     align-items: center;
 }
 
+.flex.wrap {
+    flex-wrap: wrap;
+}
+
 .flex.mobile-column {
     @include mobile {
         flex-direction: column;

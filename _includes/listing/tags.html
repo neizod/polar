@@ -30,9 +30,14 @@
   {% unless include.tags %}
     <h2>{{ page.title }}</h2>
   {% endunless %}
-  {% for tag in tags %}
-    {% assign tag_title = tag | first | default: tag %}
-    {% assign tag_size = tag | last | size %}
-    <a href="{{ tag_title | slugify | prepend: prepath }}">{{ tag_title }}{% if tag_size > 0 %} ({{ tag_size }}){% endif %}</a>{% unless forloop.last %},{% endunless %}
-  {% endfor %}
+  <div class="flex wrap">
+    {% for tag in tags %}
+      {% assign tag_title = tag | first | default: tag %}
+      {% assign tag_size = tag | last | size %}
+      <div class="tag-item" style="order: -{{ tag_size }};">
+        <a href="{{ tag_title | slugify | prepend: prepath }}">{{ tag_title }}{% if tag_size > 0 %} ({{ tag_size }}){% endif %}</a>
+        <!--{% unless forloop.last %},{% endunless %}-->
+      </div>
+    {% endfor %}
+  </div>
 </div>

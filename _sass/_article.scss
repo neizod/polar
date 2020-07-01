@@ -17,6 +17,8 @@
 
 
 .submenu.info {
+    font-family: $font-head;
+
     div {
         padding: 0.33em;
         text-align: center;
@@ -52,6 +54,14 @@
     margin: 0 1em;
     font-family: $font-head;
     align-self: stretch;
+}
+
+
+.tag-item {
+    border: 1px dashed $border-color;
+    border-radius: 5px;
+    padding: 0 0.333em;
+    margin: 0.125em;
 }
 
 
