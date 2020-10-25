@@ -65,6 +65,19 @@
 }
 
 
+.person-card {
+    width: 50%;
+    padding: 0 1em;
+    @include mobile {
+        width: 100%;
+        margin: 0.25em 1em;
+    }
+}
+.person-card p {
+    margin: 0.5em 1em;
+}
+
+
 .footnotes {
     border-top: 1px dashed $border-color;
 }

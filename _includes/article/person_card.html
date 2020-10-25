@@ -1,0 +1,27 @@
+{% capture NOOUT %}
+  {% assign person = site.data.people[include.handle] %}
+  {% assign display_name = include.handle %}
+  {% if person.handle %}
+    {% assign display_name = person.handle %}
+  {% endif %}
+  {% assign picture = person.picture %}
+  {% unless person.picture %}
+    {% assign picture = site.logo %} <!-- TODO make placholding picture for people -->
+  {% endunless %}
+{% endcapture %}
+
+<div class="person-card flex">
+  <div class="logo">
+    <img src="{{ picture | prepend: site.baseurl }}" width="72" height="72" />
+  </div>
+  <div class="info flexitem">
+    <p>
+      {% if person.url %}
+        <a href="{{ person.url }}">{{ display_name }}</a>
+      {% else %}
+        {{ display_name }}
+      {% endif %}
+    </p>
+    <p><em>{{ include.roles }}</em></p>
+  </div>
+</div>

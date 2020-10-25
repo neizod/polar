@@ -1,0 +1,13 @@
+{% if include.show_people %}
+  <div class="flex wrap">
+    {% if include.people %}
+      {% for item in include.people %}
+        {% assign handle = item | first %}
+        {% assign roles = item | last %}
+        {% include article/person_card.html handle=handle roles=roles %}
+      {% endfor %}
+    {% else %}
+      {% include article/person_card.html handle=site.owner roles="author" %}
+    {% endif %}
+  </div>
+{% endif %}
