@@ -40,7 +40,7 @@
   {% assign meta-img = page.thumbnail %}
 
   {% unless meta-img %}
-    {% assign meta-img = content | split: '<img ' %}
+    {% assign meta-img = content | split: 'person-card' | first | split: '<img ' %}
     {% assign meta-img = meta-img[1] | split: 'src="' %}
     {% assign meta-img = meta-img[1] | split: '"' | first %}
   {% endunless %}
