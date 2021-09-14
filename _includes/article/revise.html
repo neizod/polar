@@ -1,0 +1,8 @@
+{% if include.revise %}
+<p style="margin-bottom: .0em"><em>{{ site.data.theme.text.post.revise }}</em></p>
+<ul style="margin-top: .0em">
+{% for each in include.revise %}
+  <li class="revise-item"><em>{{ each.date | date: site.data.theme.date.short }}</em>: {{ each.note | markdownify }}</li>
+{% endfor %}
+</ul>
+{% endif %}

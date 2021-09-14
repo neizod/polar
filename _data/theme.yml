@@ -51,6 +51,7 @@ text:
     next_page:    Next
   post:
     origin:       "Originally published on: "
+    revise:       "Revision notes:"
     archive:      Archive
     tags:         Tags
   project:
