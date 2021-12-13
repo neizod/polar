@@ -145,7 +145,7 @@
 }
 
 
-.target:not(:target) {
+.hidden, .target:not(:target) {
     display: none;
 }
 
