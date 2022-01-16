@@ -8,6 +8,7 @@ feature:
   projects:
     latest: 0
     list:
+permalink: /index
 ---
 
 {% comment %}
