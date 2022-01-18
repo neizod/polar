@@ -41,8 +41,8 @@ disqus:
 # --------------
 
 timezone: Asia/Bangkok
-paginate: 10
 mathjax:  true
+
 
 
 # Engine Config
@@ -78,7 +78,11 @@ defaults:
       layout: doc
 
 permalink: date
-paginate_path: "/posts/page:num"
+
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: /page:num.html
 
 sass:
   sass_dir: "_sass/"
@@ -91,6 +95,6 @@ exclude:
 
 plugins:
   - jekyll-sitemap
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
 empty_array: []
