@@ -10,7 +10,7 @@ layout: default
   {% elsif homepage-empty %}
     {% include config/empty/homepage.md %}
   {% else %}
-    {% assign selection = page.feature %}
+    {% assign selection = site.data.homepage %}
   {% endif %}
   {% if unconfig-empty or homepage-empty %}
     {% assign article_class = 'page' %}
