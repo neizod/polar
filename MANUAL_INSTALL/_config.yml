@@ -8,13 +8,13 @@
 title:       #TODO the title of the blog
 description: #TODO short tagline (should not longer than 10 words)
 
-logo:  "/assets/img/logo.png"   #TODO 256x256
-cover: "/assets/img/cover.png"  #TODO 1200x630
+logo:  "/assets/img/north-pole.png"   #TODO 256x256
+cover: "/assets/img/tired-bear.png"   #TODO 1200x630
 
-baseurl: #TODO leave blank if it is the top path, else use /path/to/sub
-url:     #TODO the url, but without path, with https protocal
+baseurl: #TODO leave blank if it is the top path, else use /path/to/sub/dir
+url:     #TODO the url without path, don't forget https://
 
-owner:  #TODO name of the owner of this blog
+owner:  polarbear   #TODO name of the owner of this blog
 rights: All Right Reserved
 
 

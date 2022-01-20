@@ -8,13 +8,13 @@
 title: A New Jekyll Site
 description: Powered by Polar Theme
 
-logo:  "/assets/img/logo.png"
-cover: "/assets/img/cover.png"
+logo:  "/assets/img/north-pole.png"
+cover: "/assets/img/tired-bear.png"
 
 baseurl:
 url:
 
-owner: anonymous
+owner: polarbear
 rights: All Right Reserved
 
 
