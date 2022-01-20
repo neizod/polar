@@ -49,6 +49,8 @@ mathjax:  true
 # =============
 # you shouldn't change this unless you really know what you're doing.
 
+permalink: date
+
 collections:
   projects:
     output: true
@@ -76,8 +78,6 @@ defaults:
       type: docs
     values:
       layout: doc
-
-permalink: date
 
 pagination:
   enabled: true

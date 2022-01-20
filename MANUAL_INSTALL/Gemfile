@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'nztheme', '~> 0.2.4'
+gem 'nztheme', '~> 0.2.5'
 
-group :require_by_theme do
+group :required_by_theme do
   gem 'jekyll', '~> 4.2'
   gem 'jekyll-sitemap'
   gem 'jekyll-paginate-v2'

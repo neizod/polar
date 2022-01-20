@@ -45,9 +45,15 @@ mathjax:  true
 
 
 
+# ----------------------------------------------------------------------------
+
 # Engine Config
 # =============
 # you shouldn't change this unless you really know what you're doing.
+
+theme: nztheme
+
+permalink: date
 
 collections:
   projects:
@@ -76,8 +82,6 @@ defaults:
       type: docs
     values:
       layout: doc
-
-permalink: date
 
 pagination:
   enabled: true
