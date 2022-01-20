@@ -51,7 +51,7 @@ mathjax:  true
 # =============
 # you shouldn't change this unless you really know what you're doing.
 
-theme: nztheme
+theme: jekyll-theme-polar
 
 permalink: date
 
