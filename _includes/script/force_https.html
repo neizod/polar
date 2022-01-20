@@ -1,5 +1,0 @@
-{% if site.url contains 'https://' %}
-<script>
-if ("{{ site.url | split: '://' | last }}" == window.location.host && window.location.protocol != "https:") window.location.protocol = "https";
-</script>
-{% endif %}

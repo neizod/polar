@@ -8,8 +8,8 @@
 title:       Polar
 description: White-Clean Jekyll Theme
 
-logo:  "/assets/img/logo.png"
-cover: "/assets/img/cover.png"
+logo:  "/assets/img/north-pole.png"
+cover: "/assets/img/tired-bear.png"
 
 baseurl: "/polar"
 url:     "https://neizod.github.io"
@@ -41,13 +41,19 @@ disqus:
 # --------------
 
 timezone: Asia/Bangkok
-paginate: 3
 mathjax:  true
 
+
+
+# ----------------------------------------------------------------------------
 
 # Engine Config
 # =============
 # you shouldn't change this unless you really know what you're doing.
+
+theme: jekyll-theme-polar
+
+permalink: date
 
 collections:
   projects:
@@ -77,8 +83,11 @@ defaults:
     values:
       layout: doc
 
-permalink: date
-paginate_path: "/posts/page:num"
+pagination:
+  enabled: true
+  per_page: 10
+  sort_reverse: true
+  permalink: /page:num.html
 
 sass:
   sass_dir: "_sass/"
@@ -91,6 +100,6 @@ exclude:
 
 plugins:
   - jekyll-sitemap
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
 empty_array: []

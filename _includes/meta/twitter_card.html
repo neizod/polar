@@ -1,8 +1,0 @@
-{% if meta-twitter_large_img %}
-  <meta name="twitter:card" content="summary_large_image" />
-{% else %}
-  <meta name="twitter:card" content="summary" />
-{% endif %}
-{% if site.twitter.username %}
-  <meta name="twitter:site" content="{{ site.twitter.username | remove: "@" | prepend: "@" }}" />
-{% endif %}

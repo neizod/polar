@@ -1,9 +1,0 @@
-<div class="flex align-center mobile-column">
-  <h1>
-    {% if include.url %}
-      <a href="{{ include.url | prepend: site.baseurl }}">{{ include.title }}</a>
-    {% else %}
-      {{ include.title }}
-    {% endif %}
-  </h1>
-</div>

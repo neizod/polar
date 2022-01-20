@@ -1,9 +1,0 @@
-{% if include.selection %}
-  <div class="posts">
-    {% for item in include.selection %}
-      {% assign label = item | first | default: item %}
-      {% assign feature = include.selection[label] %}
-      {% include listing/{{label}}.html feature=feature %}
-    {% endfor %}
-  </div>
-{% endif %}
