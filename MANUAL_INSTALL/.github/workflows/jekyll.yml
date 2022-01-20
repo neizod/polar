@@ -1,4 +1,4 @@
-name: Deploy Jekyll Site on GitHub Action
+name: Deploy Jekyll Site with GitHub Action
 
 on:
   push:
