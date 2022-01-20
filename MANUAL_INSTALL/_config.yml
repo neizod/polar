@@ -86,6 +86,7 @@ defaults:
 pagination:
   enabled: true
   per_page: 10
+  sort_reverse: true
   permalink: /page:num.html
 
 sass:
