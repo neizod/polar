@@ -4,13 +4,14 @@
     {% include article/title.html title=include.title url=include.url %}
     {% include article/info.html tags=include.tags date=article-date format=article-format %}
     {% unless include.url %}
-      {% include menu/demo_source.html demo=include.demo source=include.source %}
+    {% include menu/demo_source.html demo=include.demo source=include.source %}
     {% endunless %}
     <div class="entry">
       {{ include.content }}
       {% include article/read_more.html url=include.url demo=include.demo source=include.source %}
       {% include article/origin.html origin=include.origin %}
       {% include article/revise.html revise=include.revise %}
+      {% include article/sharing.html %}
       {% include article/people.html people=include.people show_people=include.show_people %}
     </div>
     {% include article/paginate.html paginate=include.paginate %}
