@@ -68,7 +68,7 @@ To start this method, create a new Git repository at a location that you want yo
 Next, go into your blog directory and run the following commands to tell Git what and where to get the code for this theme:
 
 ``` shell
-~/borg $ git remote add theme https://github.com/neizod/polar -t master
+~/borg $ git remote add theme https://github.com/neizod/polar -t main
 ~/borg $ git config remote.theme.tagopt --no-tags
 ~/borg $ git config --add remote.theme.fetch "+refs/tags/*:refs/tags/theme/*"
 ```
