@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "variables" as *;
+@use "mixins" as *;
+
 .nomargin {
     margin: 0;
 }
@@ -91,7 +95,7 @@
     border: none;
 }
 .figure > *:last-child:not(:only-child) {
-    color: rgba($font-color, 0.7);
+    color: color.change($font-color, $alpha: 0.7);
     margin-top: 0.75em;
     text-align: center;
     font-style: italic;
@@ -109,7 +113,9 @@
 
 
 .oversized {
-    @extend .flex, .column;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
     padding: 0;
     border: none;
     overflow-x: auto;
@@ -127,7 +133,7 @@
 
 
 .mainmatter {
-    @extend .sep-bottom;
+    border-bottom: 1px solid $border-color;
     background: $background-color;
 }
 .mainmatter::after {

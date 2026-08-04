@@ -14,12 +14,19 @@ $font-mono-size: {{ font_mono_size }};
 $font-mono-line-height: {{ font_mono_line_height }};
 
 
-@import "variables";
-@import "normalize";
-@import "mixins";
-@import "base";
-@import "classes";
-@import "header";
-@import "article";
-@import "footer";
-@import "{{ site.data.theme.color.highlight | default: 'custom' | prepend: 'highlight/' }}";
+@use "variables" with (
+    $palette: $palette,
+    $font-head: $font-head,
+    $font-body: $font-body,
+    $font-mono: $font-mono,
+    $font-mono-size: $font-mono-size,
+    $font-mono-line-height: $font-mono-line-height
+);
+@use "normalize";
+@use "mixins";
+@use "base";
+@use "classes";
+@use "header";
+@use "article";
+@use "footer";
+@use "{{ site.data.theme.color.highlight | default: 'custom' | prepend: 'highlight/' }}";

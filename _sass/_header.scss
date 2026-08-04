@@ -1,3 +1,6 @@
+@use "variables" as *;
+@use "mixins" as *;
+
 header {
     padding: 1em 0;
     border-bottom: 1px solid $border-color;

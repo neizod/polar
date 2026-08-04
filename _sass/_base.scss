@@ -1,3 +1,7 @@
+@use "sass:color";
+@use "variables" as *;
+@use "mixins" as *;
+
 *, *::before, *::after {
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -7,7 +11,7 @@
 
 @include selection {
     color: $background-color;
-    background: invert($major-color);
+    background: color.invert($major-color);
 }
 
 
@@ -83,12 +87,11 @@ tfoot {
     background: $minor-color;
 }
 td {
-    @extend .sep-bottom;
+    border-bottom: 1px solid $border-color;
 }
 
 
 code {
-    @extend .highlight;
     font-family: $font-mono;
     font-size: $font-mono-size;
     padding: 0 0.33em;

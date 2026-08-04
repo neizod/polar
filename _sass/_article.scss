@@ -1,5 +1,8 @@
+@use "variables" as *;
+@use "mixins" as *;
+
 .posts > .excerpt.post {
-    @extend .sep-bottom;
+    border-bottom: 1px solid $border-color;
     padding-bottom: 2em;
 }
 .posts > .excerpt.post:last-child {
@@ -9,7 +12,7 @@
 
 
 .pagination {
-    @extend .sep-top;
+    border-top: 1px solid $border-color;
     margin-top: 1em;
     padding-top: 1em;
     text-align: center;

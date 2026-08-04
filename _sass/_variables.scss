@@ -1,3 +1,12 @@
+@use "sass:color";
+
+$palette: null !default;
+$font-head: sans-serif !default;
+$font-body: sans-serif !default;
+$font-mono: monospace !default;
+$font-mono-size: 1em !default;
+$font-mono-line-height: normal !default;
+
 //TODO if you've change data.theme.color.palette to null,
 //     specify your own colors here.
 $major-color: darkgray;
@@ -16,20 +25,20 @@ $mobile-width: 640px;
 
 // this is preset sample palette, you should not change this.
 @if ($palette == "north-pole") {
-    $major-color: lighten(lightblue, 10%);
-    $minor-color: lighten(lightgray, 10%);
+    $major-color: color.adjust(lightblue, $lightness: 10%);
+    $minor-color: color.adjust(lightgray, $lightness: 10%);
     $border-color: gainsboro;
     $background-color: white;
 
-    $font-color: lighten(black, 15%);
-    $link-color: darken(deepskyblue, 20%);
+    $font-color: color.adjust(black, $lightness: 15%);
+    $link-color: color.adjust(deepskyblue, $lightness: -20%);
 }
 @if ($palette == "aurora") {
-    $major-color: darken(blue, 42%);
-    $minor-color: lighten(black, 15%);
-    $border-color: lighten(black, 16%);
-    $background-color: lighten(black, 4%);
+    $major-color: color.adjust(blue, $lightness: -42%);
+    $minor-color: color.adjust(black, $lightness: 15%);
+    $border-color: color.adjust(black, $lightness: 16%);
+    $background-color: color.adjust(black, $lightness: 4%);
 
-    $font-color: lighten(green, 23%);
-    $link-color: darken(red, 8%);
+    $font-color: color.adjust(green, $lightness: 23%);
+    $link-color: color.adjust(red, $lightness: -8%);
 }

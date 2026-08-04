@@ -1,9 +1,10 @@
 {% capture NOOUT %}
   {% capture make_color %}
-    $palette: "{{ site.data.theme.color.palette }}";
-    @import "variables";
+    @use "variables" as vars with (
+      $palette: "{{ site.data.theme.color.palette }}"
+    );
     * {
-      color: $major-color;
+      color: vars.$major-color;
     }
   {% endcapture %}
   {% assign make_color = make_color | scssify | strip %}
